@@ -1,8 +1,17 @@
-
+import { BsSunFill, BsMoon } from "react-icons/bs";
+import { useGlobalContext } from "./GlobalContext";
 
 function ThemeToggle() {
+    const { isDarkMode, toggleDarkMode } = useGlobalContext();
+
     return (
-        <h4>Theme testing</h4>
+        <div className="toggle-container">
+            {isDarkMode ? (
+                <BsMoon className="toggle-icon" onClick={toggleDarkMode} />
+            ) : (
+                <BsSunFill className="toggle-icon" onClick={toggleDarkMode} />
+            )}
+        </div>
     );
 }
 
